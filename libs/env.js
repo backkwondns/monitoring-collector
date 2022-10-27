@@ -1,3 +1,5 @@
 import dotenv from 'dotenv'
 
-dotenv.config()
+const envFile = process.env.ENVIRONMENT === 'DEV' ? `.env.dev` : '.env'
+
+dotenv.config({path: envFile})

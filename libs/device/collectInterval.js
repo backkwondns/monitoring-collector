@@ -5,7 +5,7 @@ import fanInfo from './fan.js'
 const collectInfo = async (platformType) => {
     const cpu = await cpuInfo
     const mem = await memInfo
-    const information = {cpu, mem, data: new Date()}
+    const information = {cpu, mem, createdAt: new Date()}
     if(platformType ==='linux') information["fans"] = fanInfo
     return information
 }

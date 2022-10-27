@@ -6,13 +6,15 @@ export const fetchPost = async (path, data) => {
     const SERVER_HOST = process.env.SERVER_HOST
     const SERVER_PORT = process.env.SERVER_PORT
     try {
-        const response = await fetch(`http://${SERVER_HOST}:${SERVER_PORT}/${path}`, {
+        const response = await fetch(`http://${SERVER_HOST}:${SERVER_PORT}${path}`, {
             method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify(body)
         })
-        await response.json
-        // console.log(response)
+        const result = await response.json()
+        result.statusCode = response.status
+        console.log(result)
+        return result
     } catch (error) {
         console.error(error)
     }
