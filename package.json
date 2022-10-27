@@ -12,8 +12,5 @@
     "dotenv": "^16.0.2",
     "node-fetch": "^3.2.10",
     "systeminformation": "^5.12.6"
-  },
-  "devDependencies": {
-    "osx-temperature-sensor": "^1.0.8"
   }
 }
